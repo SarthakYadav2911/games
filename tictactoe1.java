@@ -80,6 +80,16 @@ static void placeMark(int row,int col,char mark)
         return false;
     }
  }
+   static boolean checkDraw() {
+    for (int i = 0; i < board.length; i++) {
+        for (int j = 0; j < board[i].length; j++) {
+            if (board[i][j] == ' ') {
+                return false; 
+            }
+        }
+    }
+    return true; 
+}
 }
 
 class HumanPlayer
@@ -141,6 +151,12 @@ public class tictactoe1 //main class
          System.out.println(cp.name + " has won ");
          break;
         }
+           elseif(tictactoe.checkDraw())
+              {
+              System.out.println("its a draw");
+              break;
+           }
+              
         else
         {
          if (cp==p1) {
@@ -158,3 +174,4 @@ public class tictactoe1 //main class
     }
     
 }
+
